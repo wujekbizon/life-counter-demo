@@ -1,0 +1,32 @@
+{
+  "name": "life-counter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "ssc build -r -o --test=./test/index.js --headless",
+    "init-project": "ssc init",
+    "start": "ssc build -r -o",
+    "build": "ssc build -o",
+    "android": "ssc build -r -o --platform=android"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.17.17"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
+    "@socketsupply/socket": "^0.2.11",
+    "@types/node": "^18.15.12",
+    "@types/react": "^18.0.37",
+    "@types/react-dom": "^18.0.11",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0",
+    "react-redux": "^8.0.5",
+    "typescript": "^5.0.4"
+  },
+  "type": "module"
+}

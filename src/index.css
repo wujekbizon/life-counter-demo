@@ -1,0 +1,356 @@
+/* Minimal Reset */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-family: 'Nunito', serif;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  background-color: grey;
+}
+
+.app {
+  padding: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Card component CSS */
+
+.cards_contanier {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  padding: 15px;
+  width: 350px;
+  height: 350px;
+  background-color: rgb(63, 66, 68);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 10px;
+  border: 3px solid black;
+  margin: 5px;
+}
+
+.direction {
+  transform: rotate(180deg);
+}
+
+.player_name {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player_name h2 {
+  color: white;
+  font-size: 28px;
+}
+
+.player_life h1 {
+  font-size: 75px;
+  font-weight: 700;
+  color: red;
+}
+
+.player_buttons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.player_buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  width: 37px;
+  height: 37px;
+  cursor: pointer;
+  border: none;
+}
+
+.lost {
+  background-color: rgba(231, 33, 19, 0.5);
+}
+
+.lost .btn_success:hover {
+  background-color: rgba(133, 178, 116, 1);
+}
+
+.lost .btn_danger:hover {
+  background-color: rgba(249, 113, 103, 1);
+}
+
+.winner {
+  background-color: rgba(133, 178, 116, 0.5);
+}
+
+.btn_success {
+  background-color: rgba(133, 178, 116, 1);
+  margin-left: 10px;
+}
+
+.btn_success:hover {
+  background-color: rgb(84, 126, 69);
+}
+
+.btn_danger {
+  background-color: rgba(249, 113, 103, 1);
+  margin-left: 10px;
+}
+
+.btn_danger:hover {
+  background-color: rgb(212, 48, 36);
+}
+
+.icon {
+  font-size: 30px;
+}
+
+.sub_btns {
+  display: flex;
+}
+
+.add_btns {
+  display: flex;
+}
+
+/* Settings component CSS */
+
+.settings_container {
+  width: 90vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.settings {
+  width: 50px;
+  height: 50px;
+  padding: 2px 4px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.settings:hover {
+  background-color: black;
+}
+
+.menu_icon {
+  font-size: 35px;
+}
+
+.settings:hover .menu_icon {
+  color: white;
+}
+
+/* Modal Css */
+
+.modal {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal_left {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal_right {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal label {
+  color: white;
+  margin: 0 15px;
+}
+
+.modal_settings {
+  display: flex;
+  align-items: center;
+}
+
+.btn_menu-close {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.close_icon {
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.close_icon:hover {
+  color: grey;
+}
+
+.btn_reset {
+  padding: 6px 15px;
+  background-color: rgb(243, 106, 106);
+  color: white;
+  cursor: pointer;
+}
+
+.btn_reset:hover {
+  background-color: red;
+}
+
+.modal_inputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.modal_inputs input {
+  height: 30px;
+  outline: none;
+  font-size: 25px;
+  width: 70%;
+}
+
+@media (min-width: 786px) {
+  .modal {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+/* Timer Css */
+
+.timer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.timer_clock h4 {
+  color: white;
+  font-size: 35px;
+}
+
+.timer_presets {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.timer_presets h4 {
+  color: white;
+  font-size: 20px;
+}
+
+.set_timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.set_timer button {
+  border: none;
+  background-color: transparent;
+  color: yellow;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.set_timer button:hover {
+  color: lawngreen;
+}
+
+.set_timer .icon {
+  color: grey;
+  font-size: 23px;
+}
+
+.show_timer {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.btn_timer {
+  padding: 4px 15px;
+  background-color: yellowgreen;
+  color: black;
+  cursor: pointer;
+}
+
+.btn_timer:hover {
+  background-color: chartreuse;
+}

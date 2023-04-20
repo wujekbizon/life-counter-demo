@@ -2,7 +2,7 @@
 
 #### Socket Runtime Beta
 
-#### Write once. Run anywhere. Connect everyone.Build mobile and destkop apps for any OS using HTML, CSS, and JavaScript.
+#### Write once. Run anywhere. Connect everyone. Build mobile and destkop apps for any OS using HTML, CSS, and JavaScript.
 
 #### Connect users with modern P2P that can make the cloud entirely optional.
 

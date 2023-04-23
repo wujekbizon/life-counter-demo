@@ -1,13 +1,17 @@
-import { Peer } from 'socket:peer'
+import { Peer } from '../../../node_modules/@socketsupply/socket/peer.js'
 import process from 'socket:process'
 import Buffer from 'socket:buffer'
 import fs from 'socket:fs'
+import React, { useRef, useEffect } from 'react'
 
 const Event = () => {
-  window.onload = async () => {
-    const clusterId = '14ecd42...' // truncated, make your own clusterId
-    const publicKeyHex = 'c43c1ddd...' // truncated, make your own hex encoded key
-    const privateKeyHex = '46adc2f8e9077c72...' // truncated, make your own hex encoded key
+  const canvasRef = useRef()
+
+  const onLoadDom = async () => {
+    // const clusterId = '45ggh32095dcmcdjur75347nasnxhsyg45834589609fdfm28939432492321321321' // truncated, make your own clusterId
+    const clusterId = Peer.createClusterId()
+    const publicKeyHex = 'cxzcsdflewomvfvcfd04035i43mdf34d0034cdsdcdcsd03404304043030432131321' // truncated, make your own hex encoded key
+    const privateKeyHex = 'sdasd89234823894j3djjdjj32092390u110093483382547834534955892321373sds' // truncated, make your own hex encoded key
 
     const publicKey = Buffer.from(publicKeyHex, 'hex').buffer
     const privateKey = Buffer.from(privateKeyHex, 'hex').buffer
@@ -22,7 +26,10 @@ const Event = () => {
     window.peer = peer
     console.log('created peer')
 
-    const canvas = document.getElementById('canvas')
+    if (!canvasRef.current) {
+      return
+    }
+    const canvas = canvasRef.current
     const context = canvas.getContext('2d')
 
     const setSize = () => {
@@ -124,6 +131,15 @@ const Event = () => {
       }
     }
   }
-  return <div>Event</div>
+
+  useEffect(() => {
+    onLoadDom()
+  }, [])
+
+  return (
+    <>
+      <canvas ref={canvasRef}></canvas>
+    </>
+  )
 }
 export default Event

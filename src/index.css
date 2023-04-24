@@ -354,3 +354,7 @@ body {
 .btn_timer:hover {
   background-color: chartreuse;
 }
+
+.canvas {
+  background-color: white;
+}

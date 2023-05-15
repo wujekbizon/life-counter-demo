@@ -2,6 +2,9 @@ import Settings from './components/Settings/Settings'
 import Card from './components/PlayerCard/Card'
 import Modal from './components/Modal/Modal'
 import { useTypedSelector } from './hooks/useTypedSelector'
+import Event from './components/Event/Event'
+
+import React from 'react'
 
 const App = () => {
   const isMenuOpen = useTypedSelector((state) => state.modal.isMenuOpen)
@@ -12,6 +15,7 @@ const App = () => {
       <div className="settings_container">
         <Settings />
       </div>
+      <Event />
       <div className="cards_contanier">
         {players.map((player) => (
           <Card {...player} key={player.playerId} />

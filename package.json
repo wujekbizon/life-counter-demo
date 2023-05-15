@@ -8,7 +8,8 @@
     "init-project": "ssc init",
     "start": "ssc build -r -o",
     "build": "ssc build -o",
-    "android": "ssc build -r -o --platform=android"
+    "android": "ssc build -r -o --platform=android",
+    "emulator": "ssc build --platform=android-emulator -r ."
   },
   "keywords": [],
   "author": "",
